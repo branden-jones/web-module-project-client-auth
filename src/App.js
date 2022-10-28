@@ -2,17 +2,9 @@ import React from 'react';
 import './App.css';
 import { Routes, Route, Navigate } from 'react-router-dom';
 
-const Login = () => {
-  return (<h2>Login</h2>)
-}
-
-const FriendsList = () => {
-  return (<h2>FriendList</h2>)
-}
-
-const AddFriend = () => {
-  return (<h2>AddFriend</h2>)
-}
+import Login from './Components/Login';
+import AddFriend from './Components/AddFriend';
+import FriendsList from './Components/FriendsList';
 
 
 function App() {
