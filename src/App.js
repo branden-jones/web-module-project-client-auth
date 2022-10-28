@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter as Router, Route} from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 
 const Login = () => {
   return (<h2>Login</h2>)
@@ -18,28 +18,21 @@ const AddFriend = () => {
 function App() {
   return (
 
-    <Router>
       <div className="App">
-        
-        <Route path='/'>
-          <Login />
-        </Route>
 
-        <Route path='/login'>
-          <Login />
-        </Route>
+        <Routes>
 
-        <Route path='/friends'>
-          <FriendsList />
-        </Route>
-        
-        <Route path='/friends/add'>
-          <AddFriend />
-        </Route>
+          <Route path='/friends/add' element={<AddFriend />} />
+
+          <Route path='/friends' element={<FriendsList />} />
+
+          <Route path='/login' render={<Navigate to='/' />} element={<Login />}  />
+
+          <Route path='/' element={<Login />} />
+
+        </Routes>
 
       </div>
-    </Router>
-    
   )
 }
 
